@@ -20,7 +20,7 @@ class TblOrder extends Migration
                   ->references('shipping_id')
                   ->on('tbl_shipping')
                   ->onDelete('cascade');
-            $table->double('order_total');
+            $table->string('order_total');
             $table->string('order_status');
             $table->timestamps();
         });

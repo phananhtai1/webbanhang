@@ -18,11 +18,6 @@
 			@endforeach
 		</div>
 	</div>
-	<div class="row text-center">
-		<div class="col-md-12 pt-3">
-			{{$items->appends(['result'=> $keywords, 'submit' => 'search'])->links()}}
-		</div>
-	</div>
 </div>
 <!-- end main -->
 @stop

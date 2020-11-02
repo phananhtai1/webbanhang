@@ -28,7 +28,7 @@ class FrontendController extends Controller {
 
     public function getCategory($id) {
         $data['category'] = Category::find($id);
-        $data['items'] = Product::where('prod_cat', $id)->orderBy('prod_id', 'desc')->paginate(8);
+        $data['items'] = Product::where('prod_cat', $id)->orderBy('prod_id', 'desc')->get();
         return view('frontend.category', $data);
     }
 
@@ -46,7 +46,7 @@ class FrontendController extends Controller {
         $result = $request->result;
         $data['keywords'] = $result;
         $result = str_replace(' ', '%', $result);
-        $data['items'] = Product::where('prod_name', 'like', '%' . $result . '%')->paginate(8);
+        $data['items'] = Product::where('prod_name', 'like', '%' . $result . '%')->get();
         return view('frontend.search', $data);
     }
 

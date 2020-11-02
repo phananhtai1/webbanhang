@@ -19,11 +19,6 @@
 		</div>
 	</div>
 
-	<div class="row text-center">
-		<div class="col-md-12 pt-3">
-			{{$items->links()}}
-		</div>
-	</div>
 </div>
 <!-- end main -->
 @stop
