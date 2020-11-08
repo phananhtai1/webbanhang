@@ -23,9 +23,9 @@
 **Nhớ đổi đường dẫn localhost cho phù hợp với máy tính**
 
 ### Tài khoản admin để đăng nhập vào trang quản trị
-Tên tài khoản: phananhtai1
-Mật khẩu: 123456
+- Tên tài khoản: phananhtai1
+- Mật khẩu: 123456
 
 ### Tài khoản người dùng để đăng nhập vào trang người dùng
-Tên tài khoản: Nguyễn Ngọc Diễm
-Mật khẩu: 1234567
+- Tên tài khoản: Nguyễn Ngọc Diễm
+- Mật khẩu: 1234567
