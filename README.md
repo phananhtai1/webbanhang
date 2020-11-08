@@ -12,7 +12,7 @@
 
  + Đối với Ubuntu: **cp .env.example .env**
 
-- Mở file **.env** thay đổi **DB_DATABASE, DB_USERNAME, DB_PASSWORD** cho phù hợp
+- Mở file **.env** thay đổi **APP_URL, DB_DATABASE, DB_USERNAME, DB_PASSWORD** cho phù hợp
 
 - Chạy: **php artisan key:generate**
 
