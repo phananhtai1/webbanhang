@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\User;
 use App\Http\Requests\AddUserRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -50,7 +51,22 @@ class FrontendController extends Controller {
         return view('frontend.search', $data);
     }
 
-    public function getLoginCheckout() {
+    public function getLoginCheckout(Request $request) {
+        if (session('link')) {
+            $myPath     = session('link');
+            $loginPath  = url('/login-checkout');
+            $previous   = url()->previous();
+    
+            if ($previous = $loginPath) {
+                session(['link' => $myPath]);
+            }
+            else{
+                session(['link' => $previous]);
+            }
+        }
+        else{
+             session(['link' => url()->previous()]);
+        }
         return view('frontend.login_checkout');
     }
 
@@ -61,15 +77,28 @@ class FrontendController extends Controller {
         if (Auth::attempt($arr)) {
             session()->put('user_id', $request->id);
             session()->put('user_name', $request->name);
-
-            $url_prev = session()->get('url_prev');
-            return redirect($url_prev);
+            return redirect(session('link'));
         } else {
             return back()->withInput()->with('error', 'Tài khoản hoặc mật khẩu không tồn tại');
         }
     }
 
     public function getRegister() {
+        if (session('link')) {
+            $myPath     = session('link');
+            $regPath  = url('/register');
+            $previous   = url()->previous();
+    
+            if ($previous = $regPath) {
+                session(['link' => $myPath]);
+            }
+            else{
+                session(['link' => $previous]);
+            }
+        }
+        else{
+             session(['link' => url()->previous()]);
+        }
         return view('frontend.register');
     }
 
@@ -85,13 +114,32 @@ class FrontendController extends Controller {
         $user_id = DB::table('tbl_users')->insertGetId($data);
         session()->put('user_id', $user_id);
         session()->put('user_name', $request->name);
-        $url_prev = session()->get('url_prev');
-        return redirect($url_prev);
+        return redirect(session('link'));
     }
 
     public function getLogoutCheckout() {
         Auth::logout();
         session()->flush();
         return redirect('/');
+    }
+
+    public function getAccount(){
+        return view('frontend.user');
+    }
+
+    public function getAccountUpdate(){
+        return view('frontend.user_update');
+    }
+    public function postAccountUpdate(Request $request){
+        $users = new User;
+        $user = array();
+        $user['name'] = $request->name;
+        $user['email'] = $request->email;
+        $user['phone'] = $request->phone;
+        if($request->changePassword == "on"){
+            $user['password'] = bcrypt($request->create_password);
+        }
+        $users::where('id',session()->get('user_id'))->update($user);
+        return redirect('account')->with('success',"Bạn đã cập nhật thông tin thành công");
     }
 }

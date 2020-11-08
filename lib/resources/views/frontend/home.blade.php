@@ -11,7 +11,7 @@
 				<p><a href="#">{{$item->prod_name}}</a></p>
 				<p class="price">{{number_format($item->prod_price,0,',','.')}}đ</p>
 				<div class="marsk">
-					<a href="{{asset('detail/'.$item->prod_id)}}">Xem chi tiết</a>
+					<a href="{{asset('detail/'.$item->prod_id)}}" title="Xem chi tiết sản phẩm">Xem chi tiết</a>
 				</div>
 			</div>
 			@endforeach
@@ -27,7 +27,7 @@
 				<p><a href="#">{{$item->prod_name}}</a></p>
 				<p class="price">{{number_format($item->prod_price,0,',','.')}}đ</p>
 				<div class="marsk">
-					<a href="#">Xem chi tiết</a>
+					<a href="{{asset('detail/'.$item->prod_id)}}" title="Xem chi tiết sản phẩm">Xem chi tiết</a>
 				</div>
 			</div>
 			@endforeach

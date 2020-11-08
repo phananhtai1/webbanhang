@@ -8,11 +8,13 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Comment;
 
 class HomeController extends Controller
 {
     //
     public function getHome(){
+        $data['countComment'] = Comment::count();
         $data['countProducts'] = Product::count();
         $data['countCategories'] = Category::count();
         $data['countOrder'] = Order::count();

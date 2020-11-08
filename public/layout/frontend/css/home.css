@@ -19,7 +19,16 @@ body{
 .customer-info{
 	font-family: Arial;
 	font-size: 16px;
+}
+
+.account-user{
+	cursor: pointer;
 	color: #fff;
+}
+
+.account-user:hover{
+	text-decoration: none;
+	color: #c9e94b !important;
 }
 
 .login:hover, .register:hover{
@@ -131,7 +140,7 @@ padding-left: 12px;
 	margin-top: 30px;
     margin-left: 10px;
     font-size: 15px;
-	background-color: antiquewhite;
+	background-color: antiquewhite; 
 	border-radius: inherit;
 }
 
@@ -162,7 +171,8 @@ padding-left: 12px;
 	border-radius: 0;
 }
 
-.products h3{
+
+.products h3, .account h3{
 	margin-top: 15px;
 	font-size: 18px;
 	color: #ff9600;

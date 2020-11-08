@@ -18,8 +18,8 @@
 				</tr>
 				@foreach($items as $item)
 				<tr>
-					<td><a href="{{asset('detail/'.$item->id)}}"><img class="img-responsive" height="150" src="{{asset('lib/storage/app/avatarProduct/'.$item->options->img)}}"></a></td>
-					<td><a href="{{asset('detail/'.$item->id)}}">{{$item->name}}</a></td>
+					<td><a href="{{asset('detail/'.$item->id)}}" title="Ảnh sản phẩm"><img class="img-responsive" height="150" src="{{asset('lib/storage/app/avatarProduct/'.$item->options->img)}}"></a></td>
+					<td><a href="{{asset('detail/'.$item->id)}}" title="Tên sản phẩm">{{$item->name}}</a></td>
 					<td>
 						<div class="form-group">
 							<input class="form-control" type="number"
@@ -28,7 +28,7 @@
 					</td>
 					<td><span class="price">{{number_format($item->price,0,'.','.')}}đ</span></td>
 					<td><span class="price">{{number_format($item->price*$item->qty,0,'.','.')}}đ</span></td>
-					<td><a href="{{asset('cart/delete/'.$item->rowId)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này???')">Xóa</a></td>
+					<td><a href="{{asset('cart/delete/'.$item->rowId)}}" title="Xóa sản phẩm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này???')">Xóa</a></td>
 				</tr>
 				@endforeach
 			</table>
@@ -37,17 +37,17 @@
 					Tổng thanh toán: <span class="total-price">{{$total}}đ</span>
 				</div>
 				<div class="col-md-6 col-sm-12 col-xs-12 text-right">
-					<a href="{{asset('/')}}" class="my-btn btn">Mua tiếp</a>
-					<a href="{{asset('cart/delete/all')}}" onclick="return confirm('Bạn có chắc chắn muốn xóa hết sản phẩm trong giỏ???')"class="my-btn btn">Xóa giỏ hàng</a>
+					<a href="{{asset('/')}}" title="Mua tiếp" class="my-btn btn">Mua tiếp</a>
+					<a href="{{asset('cart/delete/all')}}" title="Xóa giỏ hàng" onclick="return confirm('Bạn có chắc chắn muốn xóa hết sản phẩm trong giỏ???')"class="my-btn btn">Xóa giỏ hàng</a>
 					<?php
 					$user_id = session()->get('user_id');
 					if ($user_id == Null) {
 					?>
-						<a href="{{asset('login-checkout')}}" class="my-btn btn">Mua hàng</a>
+						<a href="{{asset('login-checkout')}}" title="Mua hàng" class="my-btn btn">Mua hàng</a>
 					<?php
 					} else {
 					?>
-						<a href="{{asset('cart/checkout')}}" class="my-btn btn">Mua hàng</a>
+						<a href="{{asset('cart/checkout')}}" title="Mua hàng" class="my-btn btn">Mua hàng</a>
 					<?php
 					}
 					?>

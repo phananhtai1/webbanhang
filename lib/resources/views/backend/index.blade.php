@@ -70,6 +70,22 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="panel panel-red panel-widget">
+				<div class="row no-padding">
+					<div class="col-sm-3 col-lg-5 widget-left">
+						<svg class="glyph stroked app-window">
+							<use xlink:href="#stroked-app-window" />
+						</svg>
+					</div>
+					<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large">{{$countComment}}</div>
+						<div class="text-muted">Bình luận</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!--/.row-->
 

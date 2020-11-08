@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Trang giao diện người dùng
+
 Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
     Route::get('/', 'FrontendController@getHome');
 
@@ -33,6 +35,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
     Route::get('register', 'FrontendController@getRegister');
     Route::post('register', 'FrontendController@postRegister');
 
+    Route::get('account', 'FrontendController@getAccount');
+    Route::get('account/update', 'FrontendController@getAccountUpdate');
+    Route::post('account/update', 'FrontendController@postAccountUpdate');
+
     Route::get('logout-checkout', 'FrontendController@getLogoutCheckout');
 
     Route::group(['prefix' => 'cart'], function () {
@@ -45,6 +51,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
     });
     Route::get('complete', 'CartController@getComplete');
 });
+
+// Trang Quản trị Admin
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::group(['prefix' => 'login'], function () {
@@ -77,6 +85,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             Route::post('edit/{id}', 'ProductController@postEditProduct');
 
             Route::get('delete/{id}', 'ProductController@getDeleteProduct');
+        });
+
+        Route::group(['prefix' => 'comment'], function () {
+            Route::get('/', 'CommentController@getComment');
+
+            Route::get('view/{id}', 'CommentController@getViewComment');
+            Route::post('view/{id}', 'CommentController@postViewComment');
+
+            Route::get('delete/{id}', 'CommentController@getDeleteComment');
         });
 
         Route::group(['prefix' => 'user'], function () {

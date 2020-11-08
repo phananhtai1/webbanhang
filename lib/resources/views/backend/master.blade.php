@@ -42,19 +42,22 @@
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
         <ul class="nav menu">
             <li role="presentation" class="divider"></li>
-            <li class="active"><a href="{{asset('admin')}}"><svg class="glyph stroked dashboard-dial">
+            <li class="active"><a href="{{asset('admin')}}" title="Trang chủ"><svg class="glyph stroked dashboard-dial">
                         <use xlink:href="#stroked-dashboard-dial" />
-                    </svg> Trang chủ</a></li>
-            <li><a href="{{asset('admin/product')}}"><svg class="glyph stroked calendar">
-                        <use xlink:href="#stroked-calendar" />
-                    </svg> Sản phẩm</a></li>
-            <li><a href="{{asset('admin/category')}}"><svg class="glyph stroked line-graph">
-                        <use xlink:href="#stroked-line-graph" />
-                    </svg> Danh mục</a></li>
-            <li><a href="{{asset('admin/user')}}"><svg class="glyph stroked male-user">
-							<use xlink:href="#stroked-male-user"></use>
-						</svg>Người dùng</a></li>
-            <li><a href="{{asset('admin/order')}}"><svg class="glyph stroked bag">
+                    </svg>Trang chủ</a></li>
+            <li><a href="{{asset('admin/product')}}" title="Sản phẩm"><svg class="glyph stroked basket">
+                        <use xlink:href="#stroked-basket"></use>
+                    </svg>Sản phẩm</a></li>
+            <li><a href="{{asset('admin/category')}}" title="Danh mục"><svg class="glyph stroked app-window-with-content">
+                        <use xlink:href="#stroked-app-window-with-content"></use>
+                    </svg>Danh mục</a></li>
+            <li><a href="{{asset('admin/comment')}}" title="Bình luận"><svg class="glyph stroked app-window">
+                        <use xlink:href="#stroked-app-window" />
+                    </svg>Bình luận</a></li>
+            <li><a href="{{asset('admin/user')}}" title="Người dùng"><svg class="glyph stroked male-user">
+                        <use xlink:href="#stroked-male-user"></use>
+                    </svg>Người dùng</a></li>
+            <li><a href="{{asset('admin/order')}}" title="Đơn hàng"><svg class="glyph stroked bag">
                         <use xlink:href="#stroked-bag" />
                     </svg>Đơn hàng</a></li>
             <li role="presentation" class="divider"></li>
@@ -114,12 +117,12 @@
             "lengthMenu": [5, 10, 15, 20, 25]
         });
 
-        $(document).ready(function(){
-            $("#changePassword").change(function(){
-                if($(this).is(":checked")){
+        $(document).ready(function() {
+            $("#changePassword").change(function() {
+                if ($(this).is(":checked")) {
                     $(".password").removeAttr("disabled");
-                }else{
-                    $(".password").attr("disabled","");
+                } else {
+                    $(".password").attr("disabled", "");
                 }
             });
         });

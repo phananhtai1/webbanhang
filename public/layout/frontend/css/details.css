@@ -328,14 +328,7 @@ nav a#pull {
 .form-control{
 	border-radius: 0px;
 }
-.btn{
-	border-radius: 0px;
-	background: #ff9600;
-	color: #fff;
-}
-.btn:hover{
-	background: #ff9600;
-}
+
 .comment{
 	padding: 0px;
 }
@@ -347,7 +340,7 @@ nav a#pull {
 	list-style: none;
 	color: #666;
 	line-height: 22px;
-	font-size: 12px;
+	font-size: 14px;
 }
 li.com-title{
 	color: #000;
@@ -365,7 +358,7 @@ li.com-title span{
 /* end details */
 
 .btn-add-cart, .btn-close{
-	background: #5151e9;
+	background: lightblue;
 	border-radius: 20px;
 	cursor: pointer;
 }

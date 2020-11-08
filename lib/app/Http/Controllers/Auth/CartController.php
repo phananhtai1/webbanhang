@@ -81,7 +81,7 @@ class CartController extends Controller
         $email = $request->email;
         Mail::send('frontend.email', $data, function($message) use($email){
             $message->from('tai.phananh2101@gmail.com', 'Anh Tài');
-            $message->to($email,session()->get('customer_name'));
+            $message->to($email,session()->get('user_name'));
             $message->subject('Xác nhận hóa đơn mua hàng');
         });
         Cart::destroy();

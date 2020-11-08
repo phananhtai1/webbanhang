@@ -27,7 +27,7 @@
 					<?php
 					} else {
 					?>
-						<span title="Tên người dùng" class="customer-info"><?php echo session()->get('user_name'); ?></span> |
+						<a href="{{asset('account')}}" title="Thông tin tài khoản" class="account-user"><span class="customer-info">{{Auth::user()->name}}</span></a> |
 						<a class="logout login" title="đăng xuất" href="{{asset('logout-checkout')}}">Đăng xuất</a>
 					<?php
 					}
@@ -51,7 +51,7 @@
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
 					<a class="display" href="{{asset('cart/show')}}" title="giỏ hàng">Giỏ hàng</a>
-					<a id="count-cart" href="{{asset('cart/show')}}">{{Cart::count()}}</a>
+					<a id="count-cart" href="{{asset('cart/show')}}" title="Số lượng sản phẩm trong giỏ">{{Cart::count()}}</a>
 				</div>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 						<ul>
 							<li class="menu-item">danh mục sản phẩm</li>
 							@foreach($categories as $cat)
-							<li class="menu-item"><a href="{{asset('category/'.$cat->cat_id.'/'.$cat->cat_slug.'.html')}}" title="">{{$cat->cat_name}}</a></li>
+							<li class="menu-item"><a href="{{asset('category/'.$cat->cat_id.'/'.$cat->cat_slug.'.html')}}" title="{{$cat->cat_name}}">{{$cat->cat_name}}</a></li>
 							@endforeach
 						</ul>
 						<!-- <a href="#" id="pull">Danh mục</a> -->
@@ -157,7 +157,7 @@
 			<div class="container">
 				<div class="row">
 					<div id="logo-f" class="col-md-3 col-sm-12 col-xs-12 text-center">
-						<a href="#"><img class="logo-images" src="img/home/images.png"></a>
+						<a href="{{asset('/')}}" title="Trang chủ"><img class="logo-images" src="img/home/images.png"></a>
 					</div>
 					<div id="about" class="col-md-3 col-sm-12 col-xs-12">
 						<h3>About us</h3>
@@ -194,9 +194,8 @@
 	</footer>
 	<!-- endfooter -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	
 	<script type="text/javascript">
 		$(function() {
@@ -237,6 +236,15 @@
 				})
 			});
 		});
+		$(document).ready(function(){
+            $("#changePassword").change(function(){
+                if($(this).is(":checked")){
+                    $(".password").removeAttr("disabled");
+                }else{
+                    $(".password").attr("disabled","");
+                }
+            });
+        });
 	</script>
 </body>
 

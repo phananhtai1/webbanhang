@@ -8,17 +8,17 @@
 		<div class="clearfix"></div>
 		<h3>{{$item->prod_name}}</h3>
 		<div class="row">
-			<div id="product-img" class="col-xs-12 col-sm-12 col-md-3 text-center">
+			<div id="product-img" class="col-xs-12 col-sm-12 col-md-4 text-center">
 				<img width="250" src="{{asset('lib/storage/app/avatarProduct/'.$item->prod_img)}}">
 			</div>
-			<div id="product-details" class="col-xs-12 col-sm-12 col-md-9">
+			<div id="product-details" class="col-xs-12 col-sm-12 col-md-8">
 				<p>Giá: <span class="price">{{number_format($item->prod_price,0,',','.')}} đ</span></p>
 				<p>Bảo hành: {{$item->prod_warranty}}</p>
 				<p>Phụ kiện: {{$item->prod_accessories}}</p>
 				<p>Tình trạng:{{$item->prod_condition}}</p>
 				<p>Khuyến mại: {{$item->prod_promotion}}</p>
 				<p>Còn hàng: @if($item->prod_status == 1) Còn hàng @else Hết hàng @endif</p>
-				<p class="add-cart text-center"><a href="{{asset('cart/add/'.$item->prod_id)}}" data-name = "{{$item->prod_name}}">Đặt hàng online</a></p>
+				<p class="add-cart text-center"><a href="{{asset('cart/add/'.$item->prod_id)}}" title="Đặt hàng" data-name = "{{$item->prod_name}}">Đặt hàng online</a></p>
 			</div>
 		</div>
 	</div>
@@ -55,7 +55,7 @@
 			<li class="com-title">
 				{{$comment->com_name}}
 				<br>
-				<span>{{date('d/m/Y H:i', strtotime($comment->created_at))}}</span>
+				<span>{{date('d/m/Y', strtotime($comment->created_at))}}</span>
 			</li>
 			<li class="com-details">
 				{{$comment->com_content}}

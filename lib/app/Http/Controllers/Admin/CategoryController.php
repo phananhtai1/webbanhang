@@ -35,11 +35,11 @@ class CategoryController extends Controller
         $category->cat_name = $req->name;
         $category->cat_slug = Str::slug($req->name);
         $category->save();
-        return redirect('admin/category')->withInput()->with('success','Sửa danh mục thành công');
+        return redirect('admin/category')->withInput()->with('success','Cập nhật danh mục thành công');
     }
 
     public function getDeleteCategory($id){
         Category::destroy($id);
-        return back();
+        return back()->with('success','Bạn đã xóa danh mục thành công');
     }
 }
