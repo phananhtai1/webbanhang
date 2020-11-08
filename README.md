@@ -1,6 +1,6 @@
 # Website bán điện thoại di động online
 ### Hướng dẫn clone project laravel từ git về
-- Clone project: **git clone [github](https://github.com/phananhtai1/webbanhang.git)**
+- Clone project: **git clone https://github.com/phananhtai1/webbanhang.git**
 
 - Sử dụng câu lệnh **cd webbanhang** đi tới thư mục chưa project mới clone về.
 
