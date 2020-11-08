@@ -1,5 +1,5 @@
-#Website bán điện thoại di động online
-###Hướng dẫn clone project laravel từ git về
+# Website bán điện thoại di động online
+### Hướng dẫn clone project laravel từ git về
 - Clone project: **git clone tên_đường_dẫn_project**
 
 - Sử dụng câu lệnh **cd Tên_thu_mục** đi tới thư mục chưa project mới clone về.
@@ -22,10 +22,10 @@
 
 **Nhớ đổi đường dẫn localhost cho phù hợp với máy tính**
 
-###Tài khoản admin để đăng nhập vào trang quản trị
+### Tài khoản admin để đăng nhập vào trang quản trị
 Tên tài khoản: phananhtai1
 Mật khẩu: 123456
 
-###Tài khoản người dùng để đăng nhập vào trang người dùng
+### Tài khoản người dùng để đăng nhập vào trang người dùng
 Tên tài khoản: Nguyễn Ngọc Diễm
 Mật khẩu: 1234567
